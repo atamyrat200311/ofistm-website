@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>About — ofis.tm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<script>(function(){try{var d=document.documentElement;d.dataset.theme=localStorage.getItem('ofis-theme')||'dark';d.dataset.accent=localStorage.getItem('ofis-accent')||'blue';}catch(e){}})();</script>
+<script src="./site.js"></script>
+<script src="./image-slot.js"></script>
+<style>
+:root,[data-theme=dark]{--bg:#0A0B0D;--bg2:#111317;--bg3:#1A1D23;--fg:#F3F4F6;--fg2:#A6ABB5;--fg3:#6E747F;--line:rgba(255,255,255,.08);--line2:rgba(255,255,255,.16);--acc:#2E5BFF;--acc-ink:#7D9BFF;--on-acc:#FFFFFF;--acc-soft:rgba(46,91,255,.16);--hdr:rgba(10,11,13,.72);--logo:none;--ok:#3DD68C}
+[data-theme=light]{--bg:#F5F5F2;--bg2:#FFFFFF;--bg3:#EBEBE6;--fg:#0B0C0F;--fg2:#4B5059;--fg3:#787D86;--line:rgba(11,12,15,.09);--line2:rgba(11,12,15,.18);--acc:#2448F5;--acc-ink:#1F3FE0;--on-acc:#FFFFFF;--acc-soft:rgba(36,72,245,.09);--hdr:rgba(245,245,242,.8);--logo:invert(1);--ok:#12A150}
+[data-accent=teal]{--acc:#19C3B1;--acc-ink:#4FD8C8;--on-acc:#03120F;--acc-soft:rgba(25,195,177,.14)}
+[data-theme=light][data-accent=teal]{--acc:#0E8C80;--acc-ink:#0B7A70;--on-acc:#FFFFFF;--acc-soft:rgba(14,140,128,.1)}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:'Onest',system-ui,sans-serif;-webkit-font-smoothing:antialiased;transition:background-color .3s,color .3s}
+*,*::before,*::after{box-sizing:border-box}
+a{color:var(--fg);text-decoration:none}
+a:hover{color:var(--acc-ink)}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+::selection{background:var(--acc);color:var(--on-acc)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+<div style="min-height:100vh;background:var(--bg);color:var(--fg)">
+<dc-import name="SiteHeader" active="about" hint-size="100%,72px" style="position:sticky;top:0;z-index:50"></dc-import>
+
+<section data-screen-label="About hero" style="position:relative;overflow:hidden;border-bottom:1px solid var(--line)">
+  <img src="assets/mark-white.png" alt="" style="position:absolute;right:-6%;top:50%;width:min(52vw,640px);transform:translateY(-50%);opacity:.05;filter:var(--logo);pointer-events:none">
+  <div style="position:relative;max-width:1320px;margin:0 auto;padding:clamp(56px,8vw,120px) clamp(20px,4vw,48px) clamp(64px,8vw,112px);display:flex;flex-direction:column;gap:28px">
+    <div data-reveal="0" style="display:flex;align-items:center;gap:14px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg3)"><span style="color:var(--acc-ink)">About</span><span style="width:32px;height:1px;background:var(--line2)"></span><span>Since 2017</span></div>
+    <h1 data-reveal="80" style="margin:0;max-width:11em;font-size:clamp(44px,7.6vw,116px);font-weight:600;line-height:.95;letter-spacing:-.055em;text-wrap:balance">A software team that speaks business.</h1>
+  </div>
+</section>
+
+<section data-screen-label="01 Story" style="border-bottom:1px solid var(--line)">
+  <div style="max-width:1320px;margin:0 auto;padding:clamp(72px,10vw,140px) clamp(20px,4vw,48px);display:flex;flex-wrap:wrap;gap:40px clamp(40px,7vw,120px)">
+    <div data-reveal="0" style="flex:1 1 300px;max-width:440px;display:flex;flex-direction:column;gap:22px">
+      <div style="display:flex;align-items:center;gap:14px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg3)"><span style="color:var(--acc-ink)">01</span><span style="width:32px;height:1px;background:var(--line2)"></span><span>Our story</span></div>
+      <p style="margin:0;font-size:clamp(24px,2.4vw,32px);font-weight:500;line-height:1.25;letter-spacing:-.025em;text-wrap:balance">We started with reports and ERP integrations. We still start every project with how the business runs.</p>
+    </div>
+    <div data-reveal="80" style="flex:1.5 1 460px;display:flex;flex-direction:column;gap:22px;max-width:720px">
+      <p style="margin:0;font-size:18px;line-height:1.65;color:var(--fg2);text-wrap:pretty">ofis.tm began in 2017 in a small office in Ashgabat. Our first projects were reports and integrations for companies running Logo ERP: getting the numbers out of the system and in front of the people who make decisions.</p>
+      <p style="margin:0;font-size:18px;line-height:1.65;color:var(--fg2);text-wrap:pretty">Clients kept asking for more. A website connected to their stock. An app for sales reps. A tool for export paperwork. We grew into a full software team, and kept the habit of understanding the process before writing the code.</p>
+      <p style="margin:0;font-size:18px;line-height:1.65;color:var(--fg2);text-wrap:pretty">Today we're designers, engineers and ERP consultants working with manufacturers, distributors and retailers in Turkmenistan and abroad.</p>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="02 Location" style="position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:var(--bg2)">
+  <div style="position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(60% 90% at 80% 50%,#000 10%,transparent 80%);mask-image:radial-gradient(60% 90% at 80% 50%,#000 10%,transparent 80%)"></div>
+  <div style="position:relative;max-width:1320px;margin:0 auto;padding:clamp(72px,10vw,140px) clamp(20px,4vw,48px);display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:48px">
+    <div data-reveal="0" style="flex:1 1 560px;display:flex;flex-direction:column;gap:22px">
+      <div style="display:flex;align-items:center;gap:14px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg3)"><span style="color:var(--acc-ink)">02</span><span style="width:32px;height:1px;background:var(--line2)"></span><span>Where we are</span></div>
+      <h2 style="margin:0;font-size:clamp(40px,6.4vw,96px);font-weight:600;line-height:.95;letter-spacing:-.055em;text-wrap:balance">Based in Ashgabat. <span style="color:var(--fg3)">Working worldwide.</span></h2>
+      <p style="margin:0;max-width:560px;font-size:18px;line-height:1.6;color:var(--fg2);text-wrap:pretty">Local clients get a team they can meet in person. International clients get a partner that knows the regional market, its regulations and its ERP systems.</p>
+    </div>
+    <dl data-reveal="100" style="flex:0 1 380px;margin:0;display:flex;flex-direction:column;border-top:1px solid var(--line2)">
+      <div style="display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)"><dt style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg3)">Local time</dt><dd style="margin:0;font-size:16px;font-weight:500;font-variant-numeric:tabular-nums">{{ time }} <span style="color:var(--fg3)">UTC+5</span></dd></div>
+      <div style="display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)"><dt style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg3)">Coordinates</dt><dd style="margin:0;font-size:16px;font-weight:500">37.96° N, 58.33° E</dd></div>
+      <div style="display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)"><dt style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg3)">We speak</dt><dd style="margin:0;font-size:16px;font-weight:500;text-align:right">Türkmen, Русский, English, Türkçe</dd></div>
+      <div style="display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)"><dt style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg3)">Clients in</dt><dd style="margin:0;font-size:16px;font-weight:500;text-align:right">Turkmenistan, Türkiye, UAE, Kazakhstan, Germany</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section data-screen-label="03 Values" style="border-bottom:1px solid var(--line)">
+  <div style="max-width:1320px;margin:0 auto;padding:clamp(72px,10vw,140px) clamp(20px,4vw,48px)">
+    <div data-reveal="0" style="display:flex;flex-direction:column;gap:22px;max-width:820px;margin-bottom:clamp(40px,5vw,64px)">
+      <div style="display:flex;align-items:center;gap:14px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg3)"><span style="color:var(--acc-ink)">03</span><span style="width:32px;height:1px;background:var(--line2)"></span><span>Values</span></div>
+      <h2 style="margin:0;font-size:clamp(32px,4.4vw,60px);font-weight:600;line-height:1;letter-spacing:-.045em;text-wrap:balance">How we work.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:40px 24px">
+      <div data-reveal="0" style="display:flex;flex-direction:column;gap:14px;padding-top:24px;border-top:1px solid var(--line2)"><span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--acc-ink)">01</span><h3 style="margin:0;font-size:24px;font-weight:600;letter-spacing:-.03em">Clear over clever</h3><p style="margin:0;font-size:16px;line-height:1.6;color:var(--fg2)">We explain things in plain language and write code the next developer can read.</p></div>
+      <div data-reveal="70" style="display:flex;flex-direction:column;gap:14px;padding-top:24px;border-top:1px solid var(--line2)"><span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--acc-ink)">02</span><h3 style="margin:0;font-size:24px;font-weight:600;letter-spacing:-.03em">Own the outcome</h3><p style="margin:0;font-size:16px;line-height:1.6;color:var(--fg2)">We measure success in hours saved and errors removed, not in features shipped.</p></div>
+      <div data-reveal="140" style="display:flex;flex-direction:column;gap:14px;padding-top:24px;border-top:1px solid var(--line2)"><span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--acc-ink)">03</span><h3 style="margin:0;font-size:24px;font-weight:600;letter-spacing:-.03em">Build for years</h3><p style="margin:0;font-size:16px;line-height:1.6;color:var(--fg2)">Software a business runs on has to be documented, secure and easy to maintain.</p></div>
+      <div data-reveal="210" style="display:flex;flex-direction:column;gap:14px;padding-top:24px;border-top:1px solid var(--line2)"><span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--acc-ink)">04</span><h3 style="margin:0;font-size:24px;font-weight:600;letter-spacing:-.03em">Respect the process</h3><p style="margin:0;font-size:16px;line-height:1.6;color:var(--fg2)">We learn how your team works today before we suggest how it could work better.</p></div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="04 Team" style="border-bottom:1px solid var(--line)">
+  <div style="max-width:1320px;margin:0 auto;padding:clamp(72px,10vw,140px) clamp(20px,4vw,48px)">
+    <div data-reveal="0" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px 48px;margin-bottom:clamp(40px,5vw,64px)">
+      <div style="display:flex;flex-direction:column;gap:22px;max-width:820px">
+        <div style="display:flex;align-items:center;gap:14px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg3)"><span style="color:var(--acc-ink)">04</span><span style="width:32px;height:1px;background:var(--line2)"></span><span>Team</span></div>
+        <h2 style="margin:0;font-size:clamp(32px,4.4vw,60px);font-weight:600;line-height:1;letter-spacing:-.045em;text-wrap:balance">The people you'll work with.</h2>
+      </div>
+      <p style="margin:0;max-width:380px;font-size:17px;line-height:1.55;color:var(--fg2)">A small senior team. The people in your first meeting are the people who build your system.</p>
+    </div>
+    <div data-reveal="60" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));gap:40px 20px;color:var(--fg3)">
+      <sc-for list="{{ team }}" as="m" hint-placeholder-count="6">
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div style="position:relative;aspect-ratio:4/5;border-radius:18px;overflow:hidden;background:var(--bg2);border:1px solid var(--line)">
+            <image-slot id="{{ m.slot }}" shape="rect" placeholder="Portrait (optional)"></image-slot>
+            <span style="position:absolute;left:14px;bottom:14px;pointer-events:none;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--fg3)">{{ m.num }}</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <span style="font-size:20px;font-weight:600;letter-spacing:-.02em;color:var(--fg)">{{ m.name }}</span>
+            <span style="font-size:15px;color:var(--fg2)">{{ m.role }}</span>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<dc-import name="CtaBand" title="Let's meet. In Ashgabat or on a call." text="Tell us a little about your company and what you want to improve. The first conversation is free and has no obligation." hint-size="100%,420px"></dc-import>
+<dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { now: Date.now() };
+  componentDidMount() {
+    this.t = setTimeout(() => window.ofisReveal && window.ofisReveal(), 60);
+    this.iv = setInterval(() => this.setState({ now: Date.now() }), 30000);
+  }
+  componentWillUnmount() { clearTimeout(this.t); clearInterval(this.iv); }
+  renderVals() {
+    const d = new Date(this.state.now + 5 * 3600 * 1000);
+    const time = String(d.getUTCHours()).padStart(2, '0') + ':' + String(d.getUTCMinutes()).padStart(2, '0');
+    const T = [
+      ['Founder name', 'Founder & CEO'],
+      ['Full name', 'Head of ERP Practice'],
+      ['Full name', 'Lead Engineer'],
+      ['Full name', 'Design Lead'],
+      ['Full name', 'Mobile Lead (Flutter)'],
+      ['Full name', 'Data & BI Lead']
+    ];
+    return { time, team: T.map(([name, role], i) => ({ name, role, num: '0' + (i + 1), slot: 'team-' + (i + 1) })) };
+  }
+}
+</script>
+</body>
+</html>

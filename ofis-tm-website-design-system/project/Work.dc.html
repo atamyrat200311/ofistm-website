@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Work — ofis.tm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<script>(function(){try{var d=document.documentElement;d.dataset.theme=localStorage.getItem('ofis-theme')||'dark';d.dataset.accent=localStorage.getItem('ofis-accent')||'blue';}catch(e){}})();</script>
+<script src="./site.js"></script>
+<style>
+:root,[data-theme=dark]{--bg:#0A0B0D;--bg2:#111317;--bg3:#1A1D23;--fg:#F3F4F6;--fg2:#A6ABB5;--fg3:#6E747F;--line:rgba(255,255,255,.08);--line2:rgba(255,255,255,.16);--acc:#2E5BFF;--acc-ink:#7D9BFF;--on-acc:#FFFFFF;--acc-soft:rgba(46,91,255,.16);--hdr:rgba(10,11,13,.72);--logo:none;--ok:#3DD68C}
+[data-theme=light]{--bg:#F5F5F2;--bg2:#FFFFFF;--bg3:#EBEBE6;--fg:#0B0C0F;--fg2:#4B5059;--fg3:#787D86;--line:rgba(11,12,15,.09);--line2:rgba(11,12,15,.18);--acc:#2448F5;--acc-ink:#1F3FE0;--on-acc:#FFFFFF;--acc-soft:rgba(36,72,245,.09);--hdr:rgba(245,245,242,.8);--logo:invert(1);--ok:#12A150}
+[data-accent=teal]{--acc:#19C3B1;--acc-ink:#4FD8C8;--on-acc:#03120F;--acc-soft:rgba(25,195,177,.14)}
+[data-theme=light][data-accent=teal]{--acc:#0E8C80;--acc-ink:#0B7A70;--on-acc:#FFFFFF;--acc-soft:rgba(14,140,128,.1)}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:'Onest',system-ui,sans-serif;-webkit-font-smoothing:antialiased;transition:background-color .3s,color .3s}
+*,*::before,*::after{box-sizing:border-box}
+a{color:var(--fg);text-decoration:none}
+a:hover{color:var(--acc-ink)}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+::selection{background:var(--acc);color:var(--on-acc)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+<div style="min-height:100vh;background:var(--bg);color:var(--fg)">
+<dc-import name="SiteHeader" active="work" hint-size="100%,72px" style="position:sticky;top:0;z-index:50"></dc-import>
+
+<section data-screen-label="Work hero" style="position:relative;overflow:hidden">
+  <div style="position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:88px 88px;-webkit-mask-image:radial-gradient(60% 80% at 85% 10%,#000 10%,transparent 75%);mask-image:radial-gradient(60% 80% at 85% 10%,#000 10%,transparent 75%)"></div>
+  <div style="position:relative;max-width:1320px;margin:0 auto;padding:clamp(56px,8vw,120px) clamp(20px,4vw,48px) clamp(40px,5vw,64px);display:flex;flex-direction:column;gap:28px">
+    <div data-reveal="0" style="display:flex;align-items:center;gap:14px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg3)"><span style="color:var(--acc-ink)">Work</span><span style="width:32px;height:1px;background:var(--line2)"></span><span>Selected projects, 2019–2026</span></div>
+    <div data-reveal="80" style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:32px 48px">
+      <h1 style="flex:1 1 560px;margin:0;max-width:900px;font-size:clamp(44px,7vw,104px);font-weight:600;line-height:.95;letter-spacing:-.055em;text-wrap:balance">Software that runs real businesses.</h1>
+      <p style="flex:0 1 380px;margin:0;font-size:17px;line-height:1.55;color:var(--fg2);text-wrap:pretty">Some clients are under NDA, so we describe them by industry. Ask us for references in your sector.</p>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Project grid" style="border-bottom:1px solid var(--line)">
+  <div style="position:sticky;top:72px;z-index:5;background:var(--hdr);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div role="tablist" aria-label="Filter projects" style="max-width:1320px;margin:0 auto;padding:14px clamp(20px,4vw,48px);display:flex;gap:8px;overflow-x:auto;scrollbar-width:none">
+      <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="5">
+        <button type="button" role="tab" aria-selected="{{ t.on }}" onClick="{{ t.pick }}" style="flex:none;display:inline-flex;align-items:center;gap:8px;height:42px;padding:0 18px;border-radius:999px;border:1px solid {{ t.border }};background:{{ t.bg }};color:{{ t.color }};font-size:15px;font-weight:500;transition:background .2s,color .2s,border-color .2s">{{ t.label }}<span style="font-family:'JetBrains Mono',monospace;font-size:11px;opacity:.6">{{ t.count }}</span></button>
+      </sc-for>
+    </div>
+  </div>
+  <div style="max-width:1320px;margin:0 auto;padding:clamp(40px,5vw,64px) clamp(20px,4vw,48px) clamp(80px,10vw,140px)">
+    <div data-reveal="0" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,460px),1fr));gap:clamp(48px,5vw,72px) 24px">
+      <sc-for list="{{ projects }}" as="p" hint-placeholder-count="6">
+        <a href="Case%20Study.dc.html" style="display:flex;flex-direction:column;gap:22px;color:var(--fg)">
+          <div style="position:relative;aspect-ratio:16/10;border-radius:20px;overflow:hidden;border:1px solid var(--line);transition:border-color .3s" style-hover="border-color:var(--line2)">
+            <dc-import name="CaseVisual" kind="{{ p.kind }}" hint-size="100%,100%" style="position:absolute;inset:0"></dc-import>
+            <span style="position:absolute;left:16px;top:16px;padding:6px 10px;border-radius:999px;background:var(--bg);border:1px solid var(--line2);font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--fg2)">{{ p.num }}</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--fg3)">{{ p.industry }}</span>
+              <span style="display:flex;gap:6px">
+                <sc-for list="{{ p.tags }}" as="t" hint-placeholder-count="2">
+                  <span style="padding:4px 9px;border-radius:999px;border:1px solid var(--line2);font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--fg2)">{{ t }}</span>
+                </sc-for>
+              </span>
+            </div>
+            <h2 style="margin:0;font-size:clamp(22px,2.2vw,30px);font-weight:600;letter-spacing:-.03em;line-height:1.1;text-wrap:balance">{{ p.title }}</h2>
+            <p style="margin:0;display:flex;gap:10px;font-size:16px;line-height:1.5;color:var(--fg2)"><span style="color:var(--acc-ink)">↗</span>{{ p.result }}</p>
+          </div>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<dc-import name="CtaBand" title="Your project could be next." text="Tell us about your business and the system you need. We'll share relevant work from your industry on the first call." hint-size="100%,420px"></dc-import>
+<dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { f: 'all' };
+  componentDidMount() { this.t = setTimeout(() => window.ofisReveal && window.ofisReveal(), 60); }
+  componentWillUnmount() { clearTimeout(this.t); }
+  renderVals() {
+    const P = [
+      ['web', 'Distribution', ['web', 'erp'], 'E-commerce platform for a heating & plumbing distributor', 'Online orders grew to 38% of sales within a year.'],
+      ['erp', 'Manufacturing', ['erp'], 'Order management & ERP sync for a manufacturer', 'Order entry time cut from 20 minutes to 4.'],
+      ['data', 'Trading', ['data'], 'Power BI reporting suite for a trading group', 'Month-end reporting in 1 day instead of 6.'],
+      ['mobile', 'Distribution', ['mobile', 'erp'], 'Sales rep app for a beverage distributor', 'Orders placed on site, with live stock from Logo Tiger.'],
+      ['web', 'Manufacturing', ['web'], 'Corporate website for a building materials producer', 'Dealer enquiries up 2.4× in the first six months.'],
+      ['erp', 'Trading', ['erp'], 'Export document generator for a cotton trader', 'Invoice, packing list and certificates drafted in one click.'],
+      ['mobile', 'Retail', ['mobile'], 'Loyalty app for a grocery chain', '42,000 members in the first six months.'],
+      ['data', 'Retail', ['data'], 'Inventory and margin dashboards for a pharmacy chain', 'Stock-outs down 31% over two quarters.']
+    ];
+    const label = { web: 'Web', mobile: 'Mobile', erp: 'ERP', data: 'Data' };
+    const f = this.state.f;
+    const all = P.map(([kind, industry, cats, title, result], i) => ({ kind, industry, cats, title, result, num: String(i + 1).padStart(2, '0'), tags: cats.map(c => label[c]) }));
+    const tabs = [['all', 'All'], ['web', 'Web'], ['mobile', 'Mobile'], ['erp', 'ERP'], ['data', 'Data']].map(([k, l]) => {
+      const on = f === k;
+      return { label: l, on, count: k === 'all' ? all.length : all.filter(p => p.cats.includes(k)).length, pick: () => this.setState({ f: k }), bg: on ? 'var(--fg)' : 'transparent', color: on ? 'var(--bg)' : 'var(--fg2)', border: on ? 'var(--fg)' : 'var(--line2)' };
+    });
+    return { tabs, projects: f === 'all' ? all : all.filter(p => p.cats.includes(f)) };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<section style="border-top:1px solid var(--line);background:var(--bg);color:var(--fg)">
+  <div style="max-width:1320px;margin:0 auto;padding:clamp(72px,10vw,140px) clamp(20px,4vw,48px);display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:40px">
+    <div style="flex:1 1 560px;display:flex;flex-direction:column;gap:20px;max-width:880px">
+      <div style="display:flex;align-items:center;gap:12px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg3)"><span style="color:var(--acc-ink)">→</span>Next step</div>
+      <h2 style="margin:0;font-size:clamp(38px,6vw,84px);font-weight:600;line-height:.98;letter-spacing:-.045em;text-wrap:balance">{{ title }}</h2>
+      <p style="margin:0;max-width:560px;font-size:clamp(16px,1.4vw,19px);line-height:1.55;color:var(--fg2);text-wrap:pretty">{{ text }}</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px">
+      <a href="Contact.dc.html" style="display:inline-flex;align-items:center;gap:10px;white-space:nowrap;height:56px;padding:0 26px;border-radius:999px;background:var(--acc);color:var(--on-acc);font-size:16px;font-weight:600;transition:filter .2s" style-hover="filter:brightness(1.12);color:var(--on-acc)">Start a project <span>→</span></a>
+      <a href="https://wa.me/99360000000" style="display:inline-flex;align-items:center;gap:10px;white-space:nowrap;height:56px;padding:0 22px;border-radius:999px;border:1px solid var(--line2);color:var(--fg);font-size:16px;font-weight:500;transition:border-color .2s,background .2s" style-hover="border-color:var(--fg);color:var(--fg)">WhatsApp ↗</a>
+      <a href="https://t.me/ofistm" style="display:inline-flex;align-items:center;gap:10px;white-space:nowrap;height:56px;padding:0 22px;border-radius:999px;border:1px solid var(--line2);color:var(--fg);font-size:16px;font-weight:500;transition:border-color .2s,background .2s" style-hover="border-color:var(--fg);color:var(--fg)">Telegram ↗</a>
+    </div>
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;480px&quot;},&quot;title&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Let's build the software your business runs on.&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;text&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Tell us what slows your team down. We reply within one working day with questions, a rough scope and next steps.&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      title: this.props.title ?? "Let's build the software your business runs on.",
+      text: this.props.text ?? 'Tell us what slows your team down. We reply within one working day with questions, a rough scope and next steps.'
+    };
+  }
+}
+</script>
+</body>
+</html>

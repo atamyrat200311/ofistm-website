@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Order management &amp; ERP sync — Case study — ofis.tm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<script>(function(){try{var d=document.documentElement;d.dataset.theme=localStorage.getItem('ofis-theme')||'dark';d.dataset.accent=localStorage.getItem('ofis-accent')||'blue';}catch(e){}})();</script>
+<script src="./site.js"></script>
+<script src="./image-slot.js"></script>
+<style>
+:root,[data-theme=dark]{--bg:#0A0B0D;--bg2:#111317;--bg3:#1A1D23;--fg:#F3F4F6;--fg2:#A6ABB5;--fg3:#6E747F;--line:rgba(255,255,255,.08);--line2:rgba(255,255,255,.16);--acc:#2E5BFF;--acc-ink:#7D9BFF;--on-acc:#FFFFFF;--acc-soft:rgba(46,91,255,.16);--hdr:rgba(10,11,13,.72);--logo:none;--ok:#3DD68C}
+[data-theme=light]{--bg:#F5F5F2;--bg2:#FFFFFF;--bg3:#EBEBE6;--fg:#0B0C0F;--fg2:#4B5059;--fg3:#787D86;--line:rgba(11,12,15,.09);--line2:rgba(11,12,15,.18);--acc:#2448F5;--acc-ink:#1F3FE0;--on-acc:#FFFFFF;--acc-soft:rgba(36,72,245,.09);--hdr:rgba(245,245,242,.8);--logo:invert(1);--ok:#12A150}
+[data-accent=teal]{--acc:#19C3B1;--acc-ink:#4FD8C8;--on-acc:#03120F;--acc-soft:rgba(25,195,177,.14)}
+[data-theme=light][data-accent=teal]{--acc:#0E8C80;--acc-ink:#0B7A70;--on-acc:#FFFFFF;--acc-soft:rgba(14,140,128,.1)}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:'Onest',system-ui,sans-serif;-webkit-font-smoothing:antialiased;transition:background-color .3s,color .3s}
+*,*::before,*::after{box-sizing:border-box}
+a{color:var(--fg);text-decoration:none}
+a:hover{color:var(--acc-ink)}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+::selection{background:var(--acc);color:var(--on-acc)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+<div style="min-height:100vh;background:var(--bg);color:var(--fg)">
+<dc-import name="SiteHeader" active="work" hint-size="100%,72px" style="position:sticky;top:0;z-index:50"></dc-import>
+
+<section data-screen-label="Case hero">
+  <div style="max-width:1320px;margin:0 auto;padding:clamp(40px,6vw,80px) clamp(20px,4vw,48px) clamp(40px,5vw,64px);display:flex;flex-direction:column;gap:clamp(32px,4vw,56px)">
+    <nav aria-label="Breadcrumb" style="display:flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--fg3)"><a href="Work.dc.html" style="color:var(--fg3)" style-hover="color:var(--fg)">Work</a><span>/</span><span style="color:var(--fg2)">Case study 02</span></nav>
+    <div data-reveal="0" style="display:flex;flex-direction:column;gap:24px;max-width:1060px">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--acc-ink)">Manufacturing · Custom software + ERP</span>
+      <h1 style="margin:0;font-size:clamp(40px,6.4vw,96px);font-weight:600;line-height:.96;letter-spacing:-.055em;text-wrap:balance">Order management &amp; ERP sync for a manufacturer</h1>
+      <p style="margin:0;max-width:680px;font-size:clamp(17px,1.5vw,20px);line-height:1.55;color:var(--fg2);text-wrap:pretty">Three sales channels, one order system, and a two-way connection to Logo Tiger. Orders no longer get retyped, and dealers see their status without calling.</p>
+    </div>
+    <dl data-reveal="80" style="margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:24px;padding-top:28px;border-top:1px solid var(--line)">
+      <div style="display:flex;flex-direction:column;gap:8px"><dt style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg3)">Client</dt><dd style="margin:0;font-size:16px;line-height:1.45">Building materials manufacturer (NDA)</dd></div>
+      <div style="display:flex;flex-direction:column;gap:8px"><dt style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg3)">Services</dt><dd style="margin:0;font-size:16px;line-height:1.45">Custom software, ERP integration, UI/UX</dd></div>
+      <div style="display:flex;flex-direction:column;gap:8px"><dt style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg3)">Duration</dt><dd style="margin:0;font-size:16px;line-height:1.45">14 weeks · 2025</dd></div>
+      <div style="display:flex;flex-direction:column;gap:8px"><dt style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg3)">Location</dt><dd style="margin:0;font-size:16px;line-height:1.45">Ashgabat, Turkmenistan</dd></div>
+    </dl>
+  </div>
+  <div data-reveal="120" style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,4vw,48px)">
+    <div style="position:relative;aspect-ratio:21/9;min-height:320px;border-radius:24px;overflow:hidden;border:1px solid var(--line)">
+      <dc-import name="CaseVisual" kind="erp" hint-size="100%,100%" style="position:absolute;inset:0"></dc-import>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="01 Challenge" style="border-bottom:1px solid var(--line)">
+  <div style="max-width:1320px;margin:0 auto;padding:clamp(72px,10vw,140px) clamp(20px,4vw,48px);display:flex;flex-wrap:wrap;gap:40px clamp(40px,7vw,120px)">
+    <div data-reveal="0" style="flex:1 1 280px;max-width:380px;display:flex;flex-direction:column;gap:22px">
+      <div style="display:flex;align-items:center;gap:14px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg3)"><span style="color:var(--acc-ink)">01</span><span style="width:32px;height:1px;background:var(--line2)"></span><span>Challenge</span></div>
+      <h2 style="margin:0;font-size:clamp(30px,3.6vw,48px);font-weight:600;line-height:1.02;letter-spacing:-.045em;text-wrap:balance">Every order was typed twice.</h2>
+    </div>
+    <div data-reveal="80" style="flex:1.6 1 480px;display:flex;flex-direction:column;gap:32px">
+      <p style="margin:0;max-width:720px;font-size:clamp(18px,1.6vw,21px);line-height:1.6;color:var(--fg);text-wrap:pretty">The client sells through dealers, direct corporate sales and a showroom. Each channel took orders its own way: phone calls, Excel files, WhatsApp messages. Sales staff then retyped every order into Logo Tiger.</p>
+      <ul style="margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));column-gap:40px">
+        <li style="display:flex;gap:14px;padding:16px 0;border-top:1px solid var(--line);font-size:16.5px;line-height:1.45;color:var(--fg2)"><span style="color:var(--fg3);font-family:'JetBrains Mono',monospace;font-size:12px;padding-top:3px">—</span>About 20 minutes of manual entry per order</li>
+        <li style="display:flex;gap:14px;padding:16px 0;border-top:1px solid var(--line);font-size:16.5px;line-height:1.45;color:var(--fg2)"><span style="color:var(--fg3);font-family:'JetBrains Mono',monospace;font-size:12px;padding-top:3px">—</span>Pricing errors on roughly one order in 25</li>
+        <li style="display:flex;gap:14px;padding:16px 0;border-top:1px solid var(--line);font-size:16.5px;line-height:1.45;color:var(--fg2)"><span style="color:var(--fg3);font-family:'JetBrains Mono',monospace;font-size:12px;padding-top:3px">—</span>No live view of stock reserved for confirmed orders</li>
+        <li style="display:flex;gap:14px;padding:16px 0;border-top:1px solid var(--line);font-size:16.5px;line-height:1.45;color:var(--fg2)"><span style="color:var(--fg3);font-family:'JetBrains Mono',monospace;font-size:12px;padding-top:3px">—</span>Dealers phoning every day to ask about status</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="02 Solution" style="border-bottom:1px solid var(--line)">
+  <div style="max-width:1320px;margin:0 auto;padding:clamp(72px,10vw,140px) clamp(20px,4vw,48px);display:flex;flex-wrap:wrap;gap:40px clamp(40px,7vw,120px)">
+    <div data-reveal="0" style="flex:1 1 280px;max-width:380px;display:flex;flex-direction:column;gap:22px">
+      <div style="display:flex;align-items:center;gap:14px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg3)"><span style="color:var(--acc-ink)">02</span><span style="width:32px;height:1px;background:var(--line2)"></span><span>Solution</span></div>
+      <h2 style="margin:0;font-size:clamp(30px,3.6vw,48px);font-weight:600;line-height:1.02;letter-spacing:-.045em;text-wrap:balance">One order system, connected both ways.</h2>
+    </div>
+    <div data-reveal="80" style="flex:1.6 1 480px;display:flex;flex-direction:column;gap:32px">
+      <p style="margin:0;max-width:720px;font-size:clamp(18px,1.6vw,21px);line-height:1.6;text-wrap:pretty">We built one order management system for all three channels and connected it to Logo Tiger in both directions. Orders, prices, stock and statuses stay in sync without anyone retyping them.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px">
+        <div style="display:flex;flex-direction:column;gap:10px;padding:24px;border:1px solid var(--line);border-radius:16px"><span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--acc-ink)">01 · Web</span><h3 style="margin:0;font-size:20px;font-weight:600;letter-spacing:-.02em">Dealer portal</h3><p style="margin:0;font-size:15.5px;line-height:1.55;color:var(--fg2)">Dealers place and track orders with their own price lists and credit limits.</p></div>
+        <div style="display:flex;flex-direction:column;gap:10px;padding:24px;border:1px solid var(--line);border-radius:16px"><span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--acc-ink)">02 · Internal</span><h3 style="margin:0;font-size:20px;font-weight:600;letter-spacing:-.02em">Sales desk</h3><p style="margin:0;font-size:15.5px;line-height:1.55;color:var(--fg2)">Corporate and showroom orders in one screen, with approval steps for discounts.</p></div>
+        <div style="display:flex;flex-direction:column;gap:10px;padding:24px;border:1px solid var(--acc);border-radius:16px;background:var(--acc-soft)"><span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--acc-ink)">03 · Integration</span><h3 style="margin:0;font-size:20px;font-weight:600;letter-spacing:-.02em">Logo Tiger sync</h3><p style="margin:0;font-size:15.5px;line-height:1.55;color:var(--fg2)">Two-way sync of orders, customers, prices, stock and invoices, with retry and audit logs.</p></div>
+        <div style="display:flex;flex-direction:column;gap:10px;padding:24px;border:1px solid var(--line);border-radius:16px"><span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--acc-ink)">04 · Notifications</span><h3 style="margin:0;font-size:20px;font-weight:600;letter-spacing:-.02em">Status updates</h3><p style="margin:0;font-size:15.5px;line-height:1.55;color:var(--fg2)">Dealers get a Telegram message when an order is confirmed, shipped and invoiced.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="03 Stack" style="border-bottom:1px solid var(--line)">
+  <div style="max-width:1320px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,48px);display:flex;flex-wrap:wrap;align-items:center;gap:28px clamp(40px,7vw,120px)">
+    <div data-reveal="0" style="flex:1 1 280px;max-width:380px;display:flex;align-items:center;gap:14px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg3)"><span style="color:var(--acc-ink)">03</span><span style="width:32px;height:1px;background:var(--line2)"></span><span>Stack</span></div>
+    <div data-reveal="60" style="flex:1.6 1 480px;display:flex;flex-wrap:wrap;gap:8px">
+      <span style="padding:10px 16px;border-radius:999px;border:1px solid var(--line2);font-size:15px">React</span>
+      <span style="padding:10px 16px;border-radius:999px;border:1px solid var(--line2);font-size:15px">TypeScript</span>
+      <span style="padding:10px 16px;border-radius:999px;border:1px solid var(--line2);font-size:15px">FastAPI</span>
+      <span style="padding:10px 16px;border-radius:999px;border:1px solid var(--line2);font-size:15px">PostgreSQL</span>
+      <span style="padding:10px 16px;border-radius:999px;border:1px solid var(--line2);font-size:15px">SQL Server</span>
+      <span style="padding:10px 16px;border-radius:999px;border:1px solid var(--acc);color:var(--acc-ink);font-size:15px">Logo Tiger objects</span>
+      <span style="padding:10px 16px;border-radius:999px;border:1px solid var(--line2);font-size:15px">Telegram Bot API</span>
+      <span style="padding:10px 16px;border-radius:999px;border:1px solid var(--line2);font-size:15px">Docker</span>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="04 Results" style="border-bottom:1px solid var(--line)">
+  <div style="max-width:1320px;margin:0 auto;padding:clamp(72px,10vw,140px) clamp(20px,4vw,48px)">
+    <div data-reveal="0" style="display:flex;flex-direction:column;gap:22px;max-width:820px;margin-bottom:clamp(40px,5vw,64px)">
+      <div style="display:flex;align-items:center;gap:14px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg3)"><span style="color:var(--acc-ink)">04</span><span style="width:32px;height:1px;background:var(--line2)"></span><span>Results</span></div>
+      <h2 style="margin:0;font-size:clamp(32px,4.4vw,60px);font-weight:600;line-height:1;letter-spacing:-.045em;text-wrap:balance">Three months after launch.</h2>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:40px 24px">
+      <div data-reveal="0" style="flex:1 1 260px;display:flex;flex-direction:column;gap:14px;padding-top:24px;border-top:1px solid var(--acc)"><span style="font-size:clamp(56px,6.4vw,96px);font-weight:600;letter-spacing:-.06em;line-height:.9">20→4<span style="font-size:.36em;color:var(--fg2);letter-spacing:-.01em"> min</span></span><span style="font-size:17px;line-height:1.5;color:var(--fg2);max-width:320px">Time to enter an order, across all three channels.</span></div>
+      <div data-reveal="80" style="flex:1 1 260px;display:flex;flex-direction:column;gap:14px;padding-top:24px;border-top:1px solid var(--line2)"><span style="font-size:clamp(56px,6.4vw,96px);font-weight:600;letter-spacing:-.06em;line-height:.9">−96<span style="font-size:.5em;color:var(--acc-ink)">%</span></span><span style="font-size:17px;line-height:1.5;color:var(--fg2);max-width:320px">Pricing errors, now that price lists come straight from Logo.</span></div>
+      <div data-reveal="160" style="flex:1 1 260px;display:flex;flex-direction:column;gap:14px;padding-top:24px;border-top:1px solid var(--line2)"><span style="font-size:clamp(56px,6.4vw,96px);font-weight:600;letter-spacing:-.06em;line-height:.9">−70<span style="font-size:.5em;color:var(--acc-ink)">%</span></span><span style="font-size:17px;line-height:1.5;color:var(--fg2);max-width:320px">Status calls from dealers, replaced by Telegram updates.</span></div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="05 Screenshots" style="border-bottom:1px solid var(--line)">
+  <div style="max-width:1320px;margin:0 auto;padding:clamp(72px,10vw,140px) clamp(20px,4vw,48px)">
+    <div data-reveal="0" style="display:flex;align-items:center;gap:14px;margin-bottom:clamp(32px,4vw,48px);font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg3)"><span style="color:var(--acc-ink)">05</span><span style="width:32px;height:1px;background:var(--line2)"></span><span>Screenshots</span></div>
+    <div data-reveal="60" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:20px;color:var(--fg2)">
+      <figure style="grid-column:1/-1;margin:0;display:flex;flex-direction:column;gap:12px">
+        <div style="position:relative;aspect-ratio:16/8;border-radius:20px;overflow:hidden;background:var(--bg2);border:1px solid var(--line)"><image-slot id="case-shot-portal" shape="rect" placeholder="Dealer portal: order list (1600×800)"></image-slot></div>
+        <figcaption style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--fg3)">Dealer portal: orders with live status from Logo Tiger</figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
+        <div style="position:relative;aspect-ratio:4/3;border-radius:20px;overflow:hidden;background:var(--bg2);border:1px solid var(--line)"><image-slot id="case-shot-desk" shape="rect" placeholder="Sales desk: new order screen"></image-slot></div>
+        <figcaption style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--fg3)">Sales desk: one screen for corporate and showroom orders</figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
+        <div style="position:relative;aspect-ratio:4/3;border-radius:20px;overflow:hidden;background:var(--bg2);border:1px solid var(--line)"><image-slot id="case-shot-sync" shape="rect" placeholder="Sync monitor screenshot"></image-slot></div>
+        <figcaption style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--fg3)">Sync monitor: every exchange with Logo Tiger, logged</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Next project" style="border-bottom:1px solid var(--line)">
+  <a href="Case%20Study.dc.html" style="display:block;color:var(--fg)" style-hover="background:var(--bg2);color:var(--fg)">
+    <div style="max-width:1320px;margin:0 auto;padding:clamp(48px,6vw,80px) clamp(20px,4vw,48px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px">
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg3)">Next project · Trading · Data</span>
+        <span style="font-size:clamp(28px,4vw,56px);font-weight:600;letter-spacing:-.045em;line-height:1.02">Power BI reporting suite</span>
+      </div>
+      <span style="width:64px;height:64px;border-radius:50%;background:var(--acc);color:var(--on-acc);display:grid;place-items:center;font-size:24px">→</span>
+    </div>
+  </a>
+</section>
+
+<dc-import name="CtaBand" title="Retyping orders into your ERP?" text="We can connect your channels to Logo Tiger or Logo Unity. Tell us how orders reach you today." hint-size="100%,420px"></dc-import>
+<dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() { this.t = setTimeout(() => window.ofisReveal && window.ofisReveal(), 60); }
+  componentWillUnmount() { clearTimeout(this.t); }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

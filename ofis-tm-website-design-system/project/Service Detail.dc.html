@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>ERP Consulting &amp; Integration — ofis.tm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<script>(function(){try{var d=document.documentElement;d.dataset.theme=localStorage.getItem('ofis-theme')||'dark';d.dataset.accent=localStorage.getItem('ofis-accent')||'blue';}catch(e){}})();</script>
+<script src="./site.js"></script>
+<style>
+:root,[data-theme=dark]{--bg:#0A0B0D;--bg2:#111317;--bg3:#1A1D23;--fg:#F3F4F6;--fg2:#A6ABB5;--fg3:#6E747F;--line:rgba(255,255,255,.08);--line2:rgba(255,255,255,.16);--acc:#2E5BFF;--acc-ink:#7D9BFF;--on-acc:#FFFFFF;--acc-soft:rgba(46,91,255,.16);--hdr:rgba(10,11,13,.72);--logo:none;--ok:#3DD68C}
+[data-theme=light]{--bg:#F5F5F2;--bg2:#FFFFFF;--bg3:#EBEBE6;--fg:#0B0C0F;--fg2:#4B5059;--fg3:#787D86;--line:rgba(11,12,15,.09);--line2:rgba(11,12,15,.18);--acc:#2448F5;--acc-ink:#1F3FE0;--on-acc:#FFFFFF;--acc-soft:rgba(36,72,245,.09);--hdr:rgba(245,245,242,.8);--logo:invert(1);--ok:#12A150}
+[data-accent=teal]{--acc:#19C3B1;--acc-ink:#4FD8C8;--on-acc:#03120F;--acc-soft:rgba(25,195,177,.14)}
+[data-theme=light][data-accent=teal]{--acc:#0E8C80;--acc-ink:#0B7A70;--on-acc:#FFFFFF;--acc-soft:rgba(14,140,128,.1)}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:'Onest',system-ui,sans-serif;-webkit-font-smoothing:antialiased;transition:background-color .3s,color .3s}
+*,*::before,*::after{box-sizing:border-box}
+a{color:var(--fg);text-decoration:none}
+a:hover{color:var(--acc-ink)}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+::selection{background:var(--acc);color:var(--on-acc)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+<div style="min-height:100vh;background:var(--bg);color:var(--fg)">
+<dc-import name="SiteHeader" active="services" hint-size="100%,72px" style="position:sticky;top:0;z-index:50"></dc-import>
+
+<section data-screen-label="Detail hero" style="position:relative;overflow:hidden;border-bottom:1px solid var(--line)">
+  <div style="position:absolute;right:-15%;top:-40%;width:min(80vw,1000px);aspect-ratio:1;border-radius:50%;background:radial-gradient(closest-side,var(--acc-soft),transparent);pointer-events:none"></div>
+  <div style="position:relative;max-width:1320px;margin:0 auto;padding:clamp(40px,6vw,80px) clamp(20px,4vw,48px) clamp(56px,7vw,96px);display:flex;flex-direction:column;gap:clamp(40px,5vw,72px)">
+    <nav aria-label="Breadcrumb" style="display:flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--fg3)"><a href="Services.dc.html" style="color:var(--fg3)" style-hover="color:var(--fg)">Services</a><span>/</span><span style="color:var(--fg2)">03 ERP</span></nav>
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:48px">
+      <div data-reveal="0" style="flex:1 1 560px;max-width:860px;display:flex;flex-direction:column;gap:28px">
+        <span style="font-size:clamp(72px,10vw,160px);font-weight:600;line-height:.8;letter-spacing:-.07em;color:var(--acc-ink)">03</span>
+        <h1 style="margin:0;font-size:clamp(40px,6vw,88px);font-weight:600;line-height:.96;letter-spacing:-.05em;text-wrap:balance">ERP Consulting &amp; Integration</h1>
+        <p style="margin:0;max-width:600px;font-size:clamp(17px,1.5vw,20px);line-height:1.55;color:var(--fg2);text-wrap:pretty">Logo Tiger and Logo Unity, set up to match how your company works and connected to everything else you run. Fewer spreadsheets, no double entry, numbers you can trust.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px">
+          <a href="Contact.dc.html" style="display:inline-flex;align-items:center;gap:10px;white-space:nowrap;height:56px;padding:0 26px;border-radius:999px;background:var(--acc);color:var(--on-acc);font-size:16px;font-weight:600;transition:filter .2s" style-hover="filter:brightness(1.12);color:var(--on-acc)">Discuss your ERP <span>→</span></a>
+          <a href="#case" style="display:inline-flex;align-items:center;gap:10px;white-space:nowrap;height:56px;padding:0 24px;border-radius:999px;border:1px solid var(--line2);color:var(--fg);font-size:16px;font-weight:500" style-hover="border-color:var(--fg);color:var(--fg)">See a related case</a>
+        </div>
+      </div>
+      <div data-reveal="120" style="flex:0 1 380px;display:flex;flex-direction:column;border:1px solid var(--line2);border-radius:20px;background:var(--bg2);overflow:hidden">
+        <div style="display:flex;justify-content:space-between;gap:16px;padding:20px 24px;border-bottom:1px solid var(--line)"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg3)">Typical timeline</span><span style="font-size:16px;font-weight:500;text-align:right">4–12 weeks</span></div>
+        <div style="display:flex;justify-content:space-between;gap:16px;padding:20px 24px;border-bottom:1px solid var(--line)"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg3)">Pricing</span><span style="font-size:16px;font-weight:500;text-align:right">Fixed price per stage</span></div>
+        <div style="display:flex;justify-content:space-between;gap:16px;padding:20px 24px;border-bottom:1px solid var(--line)"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg3)">Team</span><span style="font-size:16px;font-weight:500;text-align:right">ERP consultant, developer, analyst</span></div>
+        <div style="display:flex;justify-content:space-between;gap:16px;padding:20px 24px"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg3)">After launch</span><span style="font-size:16px;font-weight:500;text-align:right">Monthly support plan</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="01 What we do" style="border-bottom:1px solid var(--line)">
+  <div style="max-width:1320px;margin:0 auto;padding:clamp(72px,10vw,140px) clamp(20px,4vw,48px)">
+    <div data-reveal="0" style="display:flex;flex-direction:column;gap:22px;max-width:820px;margin-bottom:clamp(40px,5vw,64px)">
+      <div style="display:flex;align-items:center;gap:14px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg3)"><span style="color:var(--acc-ink)">01</span><span style="width:32px;height:1px;background:var(--line2)"></span><span>What we do</span></div>
+      <h2 style="margin:0;font-size:clamp(32px,4.4vw,60px);font-weight:600;line-height:1;letter-spacing:-.045em;text-wrap:balance">Your ERP, configured for your processes. Not the other way around.</h2>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:16px">
+      <div data-reveal="0" style="flex:1 1 260px;display:flex;flex-direction:column;gap:16px;min-height:260px;padding:28px;border:1px solid var(--line);border-radius:18px;transition:border-color .3s,background .3s" style-hover="border-color:var(--line2);background:var(--bg2)"><span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--acc-ink)">01</span><h3 style="margin:auto 0 0;font-size:24px;font-weight:600;letter-spacing:-.03em">Implementation</h3><p style="margin:0;font-size:16px;line-height:1.55;color:var(--fg2)">Install and configure Logo Tiger or Logo Unity: chart of accounts, warehouses, price lists, user roles.</p></div>
+      <div data-reveal="60" style="flex:1 1 260px;display:flex;flex-direction:column;gap:16px;min-height:260px;padding:28px;border:1px solid var(--line);border-radius:18px;transition:border-color .3s,background .3s" style-hover="border-color:var(--line2);background:var(--bg2)"><span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--acc-ink)">02</span><h3 style="margin:auto 0 0;font-size:24px;font-weight:600;letter-spacing:-.03em">Customization</h3><p style="margin:0;font-size:16px;line-height:1.55;color:var(--fg2)">Custom fields, forms, approval flows and reports, so the system matches how each department works.</p></div>
+      <div data-reveal="120" style="flex:1 1 260px;display:flex;flex-direction:column;gap:16px;min-height:260px;padding:28px;border:1px solid var(--line);border-radius:18px;transition:border-color .3s,background .3s" style-hover="border-color:var(--line2);background:var(--bg2)"><span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--acc-ink)">03</span><h3 style="margin:auto 0 0;font-size:24px;font-weight:600;letter-spacing:-.03em">Integrations</h3><p style="margin:0;font-size:16px;line-height:1.55;color:var(--fg2)">Connect Logo to your online store, mobile apps, banks, scales, barcode scanners and Excel uploads.</p></div>
+      <div data-reveal="180" style="flex:1 1 260px;display:flex;flex-direction:column;gap:16px;min-height:260px;padding:28px;border:1px solid var(--line);border-radius:18px;transition:border-color .3s,background .3s" style-hover="border-color:var(--line2);background:var(--bg2)"><span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--acc-ink)">04</span><h3 style="margin:auto 0 0;font-size:24px;font-weight:600;letter-spacing:-.03em">Migration &amp; training</h3><p style="margin:0;font-size:16px;line-height:1.55;color:var(--fg2)">Move data from old systems or spreadsheets, then train each department on its part of the system.</p></div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="02 Who it's for" style="border-bottom:1px solid var(--line)">
+  <div style="max-width:1320px;margin:0 auto;padding:clamp(72px,10vw,140px) clamp(20px,4vw,48px);display:flex;flex-wrap:wrap;gap:48px clamp(40px,7vw,120px)">
+    <div data-reveal="0" style="flex:1 1 300px;max-width:420px;display:flex;flex-direction:column;gap:22px">
+      <div style="display:flex;align-items:center;gap:14px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg3)"><span style="color:var(--acc-ink)">02</span><span style="width:32px;height:1px;background:var(--line2)"></span><span>Who it's for</span></div>
+      <h2 style="margin:0;font-size:clamp(32px,4vw,56px);font-weight:600;line-height:1;letter-spacing:-.045em;text-wrap:balance">Companies that have outgrown spreadsheets.</h2>
+    </div>
+    <div style="flex:1.6 1 480px;display:flex;flex-direction:column">
+      <div data-reveal="0" style="display:flex;flex-wrap:wrap;gap:10px 40px;padding:28px 0;border-top:1px solid var(--line)"><h3 style="flex:0 0 240px;margin:0;font-size:22px;font-weight:600;letter-spacing:-.02em">Manufacturers</h3><p style="flex:1 1 280px;margin:0;font-size:17px;line-height:1.6;color:var(--fg2)">Production orders, bills of materials and costing in Logo, connected to the shop floor and to sales.</p></div>
+      <div data-reveal="0" style="display:flex;flex-wrap:wrap;gap:10px 40px;padding:28px 0;border-top:1px solid var(--line)"><h3 style="flex:0 0 240px;margin:0;font-size:22px;font-weight:600;letter-spacing:-.02em">Distributors &amp; wholesalers</h3><p style="flex:1 1 280px;margin:0;font-size:17px;line-height:1.6;color:var(--fg2)">Price lists, stock across several warehouses and sales rep orders flowing into one ledger.</p></div>
+      <div data-reveal="0" style="display:flex;flex-wrap:wrap;gap:10px 40px;padding:28px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><h3 style="flex:0 0 240px;margin:0;font-size:22px;font-weight:600;letter-spacing:-.02em">Trading &amp; export companies</h3><p style="flex:1 1 280px;margin:0;font-size:17px;line-height:1.6;color:var(--fg2)">Multi-currency deals, contracts and export documents tied directly to accounting.</p></div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="03 Deliverables" style="border-bottom:1px solid var(--line)">
+  <div style="max-width:1320px;margin:0 auto;padding:clamp(72px,10vw,140px) clamp(20px,4vw,48px);display:flex;flex-wrap:wrap;gap:48px clamp(40px,7vw,120px)">
+    <div data-reveal="0" style="flex:1 1 300px;max-width:420px;display:flex;flex-direction:column;gap:22px">
+      <div style="display:flex;align-items:center;gap:14px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg3)"><span style="color:var(--acc-ink)">03</span><span style="width:32px;height:1px;background:var(--line2)"></span><span>Deliverables</span></div>
+      <h2 style="margin:0;font-size:clamp(32px,4vw,56px);font-weight:600;line-height:1;letter-spacing:-.045em;text-wrap:balance">What you receive.</h2>
+      <p style="margin:0;font-size:17px;line-height:1.55;color:var(--fg2)">Everything is documented and handed over. You own the configuration, the code and the data.</p>
+    </div>
+    <ul data-reveal="80" style="flex:1.6 1 480px;margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));column-gap:40px;align-content:start">
+      <li style="display:flex;gap:14px;padding:18px 0;border-top:1px solid var(--line);font-size:17px;line-height:1.45"><span style="flex:none;width:22px;height:22px;border-radius:50%;background:var(--acc-soft);color:var(--acc-ink);display:grid;place-items:center;font-size:12px">✓</span>Map of your current and target workflows</li>
+      <li style="display:flex;gap:14px;padding:18px 0;border-top:1px solid var(--line);font-size:17px;line-height:1.45"><span style="flex:none;width:22px;height:22px;border-radius:50%;background:var(--acc-soft);color:var(--acc-ink);display:grid;place-items:center;font-size:12px">✓</span>Configured Logo Tiger or Unity environment</li>
+      <li style="display:flex;gap:14px;padding:18px 0;border-top:1px solid var(--line);font-size:17px;line-height:1.45"><span style="flex:none;width:22px;height:22px;border-radius:50%;background:var(--acc-soft);color:var(--acc-ink);display:grid;place-items:center;font-size:12px">✓</span>Custom reports and print forms</li>
+      <li style="display:flex;gap:14px;padding:18px 0;border-top:1px solid var(--line);font-size:17px;line-height:1.45"><span style="flex:none;width:22px;height:22px;border-radius:50%;background:var(--acc-soft);color:var(--acc-ink);display:grid;place-items:center;font-size:12px">✓</span>Integration services with monitoring and logs</li>
+      <li style="display:flex;gap:14px;padding:18px 0;border-top:1px solid var(--line);font-size:17px;line-height:1.45"><span style="flex:none;width:22px;height:22px;border-radius:50%;background:var(--acc-soft);color:var(--acc-ink);display:grid;place-items:center;font-size:12px">✓</span>Migrated master data and opening balances</li>
+      <li style="display:flex;gap:14px;padding:18px 0;border-top:1px solid var(--line);font-size:17px;line-height:1.45"><span style="flex:none;width:22px;height:22px;border-radius:50%;background:var(--acc-soft);color:var(--acc-ink);display:grid;place-items:center;font-size:12px">✓</span>User guides and training for each role</li>
+    </ul>
+  </div>
+</section>
+
+<section data-screen-label="04 Timeline" style="border-bottom:1px solid var(--line)">
+  <div style="max-width:1320px;margin:0 auto;padding:clamp(72px,10vw,140px) clamp(20px,4vw,48px)">
+    <div data-reveal="0" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px 48px;margin-bottom:clamp(40px,5vw,64px)">
+      <div style="display:flex;flex-direction:column;gap:22px;max-width:820px">
+        <div style="display:flex;align-items:center;gap:14px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg3)"><span style="color:var(--acc-ink)">04</span><span style="width:32px;height:1px;background:var(--line2)"></span><span>Typical timeline</span></div>
+        <h2 style="margin:0;font-size:clamp(32px,4.4vw,60px);font-weight:600;line-height:1;letter-spacing:-.045em;text-wrap:balance">Live in about ten weeks.</h2>
+      </div>
+      <p style="margin:0;max-width:380px;font-size:17px;line-height:1.55;color:var(--fg2)">A mid-size implementation with two integrations. Smaller setups take four weeks; complex multi-company rollouts up to twelve.</p>
+    </div>
+    <div data-reveal="80" style="display:flex;flex-direction:column">
+      <div style="display:flex;flex-wrap:wrap;gap:8px 32px;padding-bottom:12px;border-bottom:1px solid var(--line2)">
+        <span style="flex:0 0 240px"></span>
+        <div style="flex:1 1 380px;display:grid;grid-template-columns:repeat(10,1fr);font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--fg3)"><span>W1</span><span>W2</span><span>W3</span><span>W4</span><span>W5</span><span>W6</span><span>W7</span><span>W8</span><span>W9</span><span>W10</span></div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 32px;padding:16px 0;border-bottom:1px solid var(--line)"><span style="flex:0 0 240px;font-size:17px;font-weight:500">Audit &amp; discovery</span><div style="flex:1 1 380px;position:relative;height:34px"><span style="position:absolute;left:0;width:20%;top:0;bottom:0;border-radius:8px;background:var(--acc-soft);border:1px solid var(--acc)"></span></div></div>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 32px;padding:16px 0;border-bottom:1px solid var(--line)"><span style="flex:0 0 240px;font-size:17px;font-weight:500">Configuration</span><div style="flex:1 1 380px;position:relative;height:34px"><span style="position:absolute;left:10%;width:30%;top:0;bottom:0;border-radius:8px;background:var(--acc-soft);border:1px solid var(--acc)"></span></div></div>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 32px;padding:16px 0;border-bottom:1px solid var(--line)"><span style="flex:0 0 240px;font-size:17px;font-weight:500">Integrations &amp; reports</span><div style="flex:1 1 380px;position:relative;height:34px"><span style="position:absolute;left:20%;width:60%;top:0;bottom:0;border-radius:8px;background:var(--acc-soft);border:1px solid var(--acc)"></span></div></div>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 32px;padding:16px 0;border-bottom:1px solid var(--line)"><span style="flex:0 0 240px;font-size:17px;font-weight:500">Migration &amp; training</span><div style="flex:1 1 380px;position:relative;height:34px"><span style="position:absolute;left:60%;width:30%;top:0;bottom:0;border-radius:8px;background:var(--acc-soft);border:1px solid var(--acc)"></span></div></div>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 32px;padding:16px 0;border-bottom:1px solid var(--line)"><span style="flex:0 0 240px;font-size:17px;font-weight:500">Go-live &amp; support</span><div style="flex:1 1 380px;position:relative;height:34px"><span style="position:absolute;left:90%;width:10%;top:0;bottom:0;border-radius:8px;background:var(--acc)"></span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="case" data-screen-label="05 Related case" style="scroll-margin-top:72px;border-bottom:1px solid var(--line)">
+  <div style="max-width:1320px;margin:0 auto;padding:clamp(72px,10vw,140px) clamp(20px,4vw,48px)">
+    <div data-reveal="0" style="display:flex;align-items:center;gap:14px;margin-bottom:32px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg3)"><span style="color:var(--acc-ink)">05</span><span style="width:32px;height:1px;background:var(--line2)"></span><span>Related case</span></div>
+    <a href="Case%20Study.dc.html" data-reveal="60" style="display:flex;flex-wrap:wrap;align-items:stretch;border:1px solid var(--line);border-radius:22px;overflow:hidden;color:var(--fg);transition:border-color .3s" style-hover="border-color:var(--line2);color:var(--fg)">
+      <div style="flex:1.4 1 480px;position:relative;min-height:340px">
+        <dc-import name="CaseVisual" kind="erp" hint-size="100%,100%" style="position:absolute;inset:0"></dc-import>
+      </div>
+      <div style="flex:1 1 320px;display:flex;flex-direction:column;justify-content:space-between;gap:32px;padding:clamp(28px,3.4vw,44px)">
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--fg3)">Manufacturing · 14 weeks</span>
+          <h3 style="margin:0;font-size:clamp(26px,2.6vw,36px);font-weight:600;letter-spacing:-.035em;line-height:1.08;text-wrap:balance">Order management &amp; ERP sync for a manufacturer</h3>
+          <p style="margin:0;font-size:17px;line-height:1.55;color:var(--fg2)">Sales orders from three channels now land in Logo Tiger automatically. Nobody retypes them.</p>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px">
+          <div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:44px;font-weight:600;letter-spacing:-.05em;line-height:1">20 → 4<span style="font-size:.45em;color:var(--fg2);letter-spacing:0"> min</span></span><span style="font-size:14px;color:var(--fg3)">Order entry time</span></div>
+          <span style="font-size:15px;font-weight:500">Read case study →</span>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section data-screen-label="Other services" style="border-bottom:1px solid var(--line)">
+  <div style="max-width:1320px;margin:0 auto;padding:40px clamp(20px,4vw,48px);display:flex;flex-wrap:wrap;align-items:center;gap:12px 10px">
+    <span style="margin-right:12px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg3)">Other services</span>
+    <a href="Service%20Detail.dc.html" style="padding:10px 16px;border-radius:999px;border:1px solid var(--line2);font-size:15px;white-space:nowrap" style-hover="border-color:var(--fg);color:var(--fg)">01 Web Development</a>
+    <a href="Service%20Detail.dc.html" style="padding:10px 16px;border-radius:999px;border:1px solid var(--line2);font-size:15px;white-space:nowrap" style-hover="border-color:var(--fg);color:var(--fg)">02 Mobile Apps</a>
+    <a href="Service%20Detail.dc.html" style="padding:10px 16px;border-radius:999px;border:1px solid var(--line2);font-size:15px;white-space:nowrap" style-hover="border-color:var(--fg);color:var(--fg)">04 Data &amp; Reporting</a>
+    <a href="Service%20Detail.dc.html" style="padding:10px 16px;border-radius:999px;border:1px solid var(--line2);font-size:15px;white-space:nowrap" style-hover="border-color:var(--fg);color:var(--fg)">05 Custom Software</a>
+    <a href="Service%20Detail.dc.html" style="padding:10px 16px;border-radius:999px;border:1px solid var(--line2);font-size:15px;white-space:nowrap" style-hover="border-color:var(--fg);color:var(--fg)">06 UI/UX Design</a>
+  </div>
+</section>
+
+<dc-import name="CtaBand" title="Make Logo work the way your company works." text="Tell us which version you run and what hurts today. We'll suggest a first step within one working day." hint-size="100%,420px"></dc-import>
+<dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() { this.t = setTimeout(() => window.ofisReveal && window.ofisReveal(), 60); }
+  componentWillUnmount() { clearTimeout(this.t); }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

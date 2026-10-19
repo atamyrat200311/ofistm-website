@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<div style="position:relative;width:100%;height:100%;min-height:220px;overflow:hidden;background-color:var(--bg2);background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:28px 28px;background-position:-1px -1px;font-family:'JetBrains Mono',monospace;color:var(--fg)">
+  <div style="position:absolute;inset:0;background:radial-gradient(90% 70% at 100% 0%,var(--acc-soft),transparent 70%)"></div>
+
+  <sc-if value="{{ isWeb }}" hint-placeholder-val="{{ true }}">
+    <div style="position:absolute;left:9%;top:13%;right:-8%;bottom:-10%;background:var(--bg);border:1px solid var(--line2);border-radius:12px;box-shadow:0 30px 60px -24px rgba(0,0,0,.55);display:flex;flex-direction:column;overflow:hidden">
+      <div style="display:flex;align-items:center;gap:6px;padding:10px 14px;border-bottom:1px solid var(--line)">
+        <span style="width:7px;height:7px;border-radius:50%;background:var(--line2)"></span>
+        <span style="width:7px;height:7px;border-radius:50%;background:var(--line2)"></span>
+        <span style="width:7px;height:7px;border-radius:50%;background:var(--line2)"></span>
+        <span style="margin-left:10px;flex:0 1 220px;height:18px;border-radius:6px;background:var(--bg3);font-size:9.5px;line-height:18px;padding:0 8px;color:var(--fg3);white-space:nowrap;overflow:hidden">teplo-market.tm/catalog</span>
+      </div>
+      <div style="padding:16px 18px;display:flex;flex-direction:column;gap:16px;flex:1">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+          <span style="font-family:'Onest',sans-serif;font-weight:700;font-size:13px;letter-spacing:-.02em">TEPLO</span>
+          <div style="display:flex;gap:10px;flex:1;justify-content:center">
+            <span style="width:28px;height:4px;border-radius:2px;background:var(--line2)"></span>
+            <span style="width:22px;height:4px;border-radius:2px;background:var(--line2)"></span>
+            <span style="width:30px;height:4px;border-radius:2px;background:var(--line2)"></span>
+            <span style="width:20px;height:4px;border-radius:2px;background:var(--line2)"></span>
+          </div>
+          <span style="height:20px;padding:0 10px;border-radius:999px;background:var(--acc);color:var(--on-acc);font-size:9px;line-height:20px;white-space:nowrap">Cart · 3</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:14px">
+          <div style="display:flex;flex-direction:column;gap:8px;justify-content:center">
+            <span style="font-family:'Onest',sans-serif;font-weight:600;font-size:15px;line-height:1.1;letter-spacing:-.02em">Boilers, radiators &amp; fittings</span>
+            <span style="height:4px;width:80%;background:var(--line2);border-radius:2px"></span>
+            <span style="height:4px;width:58%;background:var(--line2);border-radius:2px"></span>
+          </div>
+          <div style="height:72px;border-radius:8px;background:linear-gradient(135deg,var(--acc-soft),var(--bg3))"></div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:10px">
+          <div style="display:flex;flex-direction:column;gap:6px"><div style="aspect-ratio:1;border-radius:8px;background:var(--bg3)"></div><span style="height:4px;width:80%;background:var(--line2);border-radius:2px"></span><span style="font-size:9px;color:var(--acc-ink)">1 240 TMT</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px"><div style="aspect-ratio:1;border-radius:8px;background:var(--bg3)"></div><span style="height:4px;width:64%;background:var(--line2);border-radius:2px"></span><span style="font-size:9px;color:var(--acc-ink)">386 TMT</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px"><div style="aspect-ratio:1;border-radius:8px;background:var(--bg3)"></div><span style="height:4px;width:72%;background:var(--line2);border-radius:2px"></span><span style="font-size:9px;color:var(--acc-ink)">2 915 TMT</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px"><div style="aspect-ratio:1;border-radius:8px;background:var(--bg3)"></div><span style="height:4px;width:56%;background:var(--line2);border-radius:2px"></span><span style="font-size:9px;color:var(--acc-ink)">74 TMT</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px"><div style="aspect-ratio:1;border-radius:8px;background:var(--bg3)"></div><span style="height:4px;width:68%;background:var(--line2);border-radius:2px"></span><span style="font-size:9px;color:var(--acc-ink)">612 TMT</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px"><div style="aspect-ratio:1;border-radius:8px;background:var(--bg3)"></div><span style="height:4px;width:76%;background:var(--line2);border-radius:2px"></span><span style="font-size:9px;color:var(--acc-ink)">1 980 TMT</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px"><div style="aspect-ratio:1;border-radius:8px;background:var(--bg3)"></div><span style="height:4px;width:60%;background:var(--line2);border-radius:2px"></span><span style="font-size:9px;color:var(--acc-ink)">148 TMT</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px"><div style="aspect-ratio:1;border-radius:8px;background:var(--bg3)"></div><span style="height:4px;width:70%;background:var(--line2);border-radius:2px"></span><span style="font-size:9px;color:var(--acc-ink)">3 450 TMT</span></div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isErp }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;left:9%;top:13%;right:-10%;bottom:-10%;background:var(--bg);border:1px solid var(--line2);border-radius:12px;box-shadow:0 30px 60px -24px rgba(0,0,0,.55);display:flex;flex-direction:column;overflow:hidden;font-size:10px">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;border-bottom:1px solid var(--line)">
+        <span style="font-family:'Onest',sans-serif;font-weight:600;font-size:13px;letter-spacing:-.01em">Sales orders</span>
+        <span style="display:flex;align-items:center;gap:6px;height:22px;padding:0 10px;border-radius:999px;background:var(--acc-soft);color:var(--acc-ink);white-space:nowrap"><span style="width:6px;height:6px;border-radius:50%;background:var(--ok)"></span>Logo Tiger ⇄ synced 2s ago</span>
+      </div>
+      <div style="display:grid;grid-template-columns:72px minmax(0,1fr) 78px 64px;gap:10px;padding:9px 16px;color:var(--fg3);border-bottom:1px solid var(--line);letter-spacing:.04em;text-transform:uppercase;font-size:9px">
+        <span>Order</span><span>Customer</span><span style="text-align:right">Amount</span><span>Status</span>
+      </div>
+      <div style="display:grid;grid-template-columns:72px minmax(0,1fr) 78px 64px;gap:10px;padding:9px 16px;border-bottom:1px solid var(--line);align-items:center"><span>SO-24081</span><span style="white-space:nowrap;overflow:hidden;color:var(--fg2)">Ak Ýol Trading</span><span style="text-align:right">12 480.00</span><span style="color:var(--acc-ink)">● Synced</span></div>
+      <div style="display:grid;grid-template-columns:72px minmax(0,1fr) 78px 64px;gap:10px;padding:9px 16px;border-bottom:1px solid var(--line);align-items:center"><span>SO-24080</span><span style="white-space:nowrap;overflow:hidden;color:var(--fg2)">Garagum Build</span><span style="text-align:right">3 215.50</span><span style="color:var(--acc-ink)">● Synced</span></div>
+      <div style="display:grid;grid-template-columns:72px minmax(0,1fr) 78px 64px;gap:10px;padding:9px 16px;border-bottom:1px solid var(--line);align-items:center;background:var(--bg2)"><span>SO-24079</span><span style="white-space:nowrap;overflow:hidden;color:var(--fg2)">Merw Foods</span><span style="text-align:right">8 940.00</span><span style="color:var(--fg2)">◐ Posting</span></div>
+      <div style="display:grid;grid-template-columns:72px minmax(0,1fr) 78px 64px;gap:10px;padding:9px 16px;border-bottom:1px solid var(--line);align-items:center"><span>SO-24078</span><span style="white-space:nowrap;overflow:hidden;color:var(--fg2)">Balkan Steel</span><span style="text-align:right">21 006.00</span><span style="color:var(--acc-ink)">● Synced</span></div>
+      <div style="display:grid;grid-template-columns:72px minmax(0,1fr) 78px 64px;gap:10px;padding:9px 16px;border-bottom:1px solid var(--line);align-items:center"><span>SO-24077</span><span style="white-space:nowrap;overflow:hidden;color:var(--fg2)">Lebap Agro</span><span style="text-align:right">1 870.25</span><span style="color:var(--acc-ink)">● Synced</span></div>
+      <div style="display:grid;grid-template-columns:72px minmax(0,1fr) 78px 64px;gap:10px;padding:9px 16px;align-items:center"><span>SO-24076</span><span style="white-space:nowrap;overflow:hidden;color:var(--fg2)">Arkadag Retail</span><span style="text-align:right">6 402.00</span><span style="color:var(--acc-ink)">● Synced</span></div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isData }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;left:9%;top:13%;right:-8%;bottom:-10%;background:var(--bg);border:1px solid var(--line2);border-radius:12px;box-shadow:0 30px 60px -24px rgba(0,0,0,.55);display:flex;flex-direction:column;gap:16px;padding:16px 18px;overflow:hidden;font-size:10px">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+        <span style="font-family:'Onest',sans-serif;font-weight:600;font-size:13px">Management report</span>
+        <span style="color:var(--fg3);white-space:nowrap">Q3 2026 · All regions</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px">
+        <div style="padding:10px 12px;border:1px solid var(--line);border-radius:8px;display:flex;flex-direction:column;gap:4px"><span style="color:var(--fg3);font-size:9px;text-transform:uppercase;letter-spacing:.06em">Revenue</span><span style="font-family:'Onest',sans-serif;font-weight:600;font-size:18px;letter-spacing:-.02em">4.82M</span><span style="color:var(--acc-ink)">▲ 12.4%</span></div>
+        <div style="padding:10px 12px;border:1px solid var(--line);border-radius:8px;display:flex;flex-direction:column;gap:4px"><span style="color:var(--fg3);font-size:9px;text-transform:uppercase;letter-spacing:.06em">Margin</span><span style="font-family:'Onest',sans-serif;font-weight:600;font-size:18px;letter-spacing:-.02em">23.4%</span><span style="color:var(--acc-ink)">▲ 1.8 pp</span></div>
+        <div style="padding:10px 12px;border:1px solid var(--line);border-radius:8px;display:flex;flex-direction:column;gap:4px"><span style="color:var(--fg3);font-size:9px;text-transform:uppercase;letter-spacing:.06em">DSO</span><span style="font-family:'Onest',sans-serif;font-weight:600;font-size:18px;letter-spacing:-.02em">38 d</span><span style="color:var(--fg2)">▼ 6 d</span></div>
+      </div>
+      <div style="flex:1;min-height:60px;display:flex;align-items:flex-end;gap:6px;border-bottom:1px solid var(--line);padding-bottom:1px">
+        <span style="flex:1;height:34%;background:var(--bg3);border-radius:3px 3px 0 0"></span>
+        <span style="flex:1;height:46%;background:var(--bg3);border-radius:3px 3px 0 0"></span>
+        <span style="flex:1;height:40%;background:var(--bg3);border-radius:3px 3px 0 0"></span>
+        <span style="flex:1;height:58%;background:var(--bg3);border-radius:3px 3px 0 0"></span>
+        <span style="flex:1;height:52%;background:var(--bg3);border-radius:3px 3px 0 0"></span>
+        <span style="flex:1;height:66%;background:var(--bg3);border-radius:3px 3px 0 0"></span>
+        <span style="flex:1;height:61%;background:var(--bg3);border-radius:3px 3px 0 0"></span>
+        <span style="flex:1;height:74%;background:var(--bg3);border-radius:3px 3px 0 0"></span>
+        <span style="flex:1;height:70%;background:var(--bg3);border-radius:3px 3px 0 0"></span>
+        <span style="flex:1;height:82%;background:var(--bg3);border-radius:3px 3px 0 0"></span>
+        <span style="flex:1;height:88%;background:var(--line2);border-radius:3px 3px 0 0"></span>
+        <span style="flex:1;height:96%;background:var(--acc);border-radius:3px 3px 0 0"></span>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;left:50%;top:12%;width:min(44%,230px);aspect-ratio:9/18.5;transform:translateX(-58%);background:var(--bg);border:1px solid var(--line2);border-radius:28px;box-shadow:0 30px 60px -24px rgba(0,0,0,.55);padding:14px 12px;display:flex;flex-direction:column;gap:12px;overflow:hidden;font-size:9.5px">
+      <div style="display:flex;justify-content:space-between;color:var(--fg3)"><span>9:41</span><span style="width:40px;height:10px;border-radius:999px;background:var(--bg3)"></span><span>5G</span></div>
+      <div style="display:flex;flex-direction:column;gap:2px;padding-top:4px">
+        <span style="color:var(--fg3)">Orders this month</span>
+        <span style="font-family:'Onest',sans-serif;font-weight:600;font-size:24px;letter-spacing:-.03em">1 284</span>
+        <span style="color:var(--acc-ink)">▲ 9.2% vs Sep</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:0">
+        <div style="display:flex;align-items:center;gap:8px;padding:8px 0;border-top:1px solid var(--line)"><span style="width:22px;height:22px;border-radius:7px;background:var(--acc-soft)"></span><span style="flex:1;display:flex;flex-direction:column;gap:4px"><span style="height:4px;width:70%;background:var(--line2);border-radius:2px"></span><span style="height:4px;width:40%;background:var(--line);border-radius:2px"></span></span><span>#4471</span></div>
+        <div style="display:flex;align-items:center;gap:8px;padding:8px 0;border-top:1px solid var(--line)"><span style="width:22px;height:22px;border-radius:7px;background:var(--bg3)"></span><span style="flex:1;display:flex;flex-direction:column;gap:4px"><span style="height:4px;width:60%;background:var(--line2);border-radius:2px"></span><span style="height:4px;width:44%;background:var(--line);border-radius:2px"></span></span><span>#4470</span></div>
+        <div style="display:flex;align-items:center;gap:8px;padding:8px 0;border-top:1px solid var(--line)"><span style="width:22px;height:22px;border-radius:7px;background:var(--bg3)"></span><span style="flex:1;display:flex;flex-direction:column;gap:4px"><span style="height:4px;width:76%;background:var(--line2);border-radius:2px"></span><span style="height:4px;width:36%;background:var(--line);border-radius:2px"></span></span><span>#4469</span></div>
+      </div>
+      <div style="margin-top:auto;height:34px;border-radius:12px;background:var(--acc);color:var(--on-acc);display:grid;place-items:center;font-family:'Onest',sans-serif;font-weight:600;font-size:11px">New order</div>
+    </div>
+    <div style="position:absolute;left:50%;top:42%;margin-left:8%;padding:10px 12px;background:var(--bg);border:1px solid var(--line2);border-radius:12px;box-shadow:0 20px 40px -16px rgba(0,0,0,.5);display:flex;flex-direction:column;gap:3px;font-size:9.5px;white-space:nowrap">
+      <span style="color:var(--fg3)">Push · 2 min ago</span>
+      <span style="font-family:'Onest',sans-serif;font-weight:600;font-size:11.5px">Order #4471 confirmed</span>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;560px&quot;,&quot;height&quot;:&quot;380px&quot;},&quot;kind&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;web&quot;,&quot;mobile&quot;,&quot;erp&quot;,&quot;data&quot;],&quot;default&quot;:&quot;web&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const k = this.props.kind || 'web';
+    return { isWeb: k === 'web', isErp: k === 'erp', isData: k === 'data', isMobile: k === 'mobile' };
+  }
+}
+</script>
+</body>
+</html>

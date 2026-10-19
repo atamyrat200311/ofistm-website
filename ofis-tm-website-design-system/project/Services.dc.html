@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Services — ofis.tm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<script>(function(){try{var d=document.documentElement;d.dataset.theme=localStorage.getItem('ofis-theme')||'dark';d.dataset.accent=localStorage.getItem('ofis-accent')||'blue';}catch(e){}})();</script>
+<script src="./site.js"></script>
+<style>
+:root,[data-theme=dark]{--bg:#0A0B0D;--bg2:#111317;--bg3:#1A1D23;--fg:#F3F4F6;--fg2:#A6ABB5;--fg3:#6E747F;--line:rgba(255,255,255,.08);--line2:rgba(255,255,255,.16);--acc:#2E5BFF;--acc-ink:#7D9BFF;--on-acc:#FFFFFF;--acc-soft:rgba(46,91,255,.16);--hdr:rgba(10,11,13,.72);--logo:none;--ok:#3DD68C}
+[data-theme=light]{--bg:#F5F5F2;--bg2:#FFFFFF;--bg3:#EBEBE6;--fg:#0B0C0F;--fg2:#4B5059;--fg3:#787D86;--line:rgba(11,12,15,.09);--line2:rgba(11,12,15,.18);--acc:#2448F5;--acc-ink:#1F3FE0;--on-acc:#FFFFFF;--acc-soft:rgba(36,72,245,.09);--hdr:rgba(245,245,242,.8);--logo:invert(1);--ok:#12A150}
+[data-accent=teal]{--acc:#19C3B1;--acc-ink:#4FD8C8;--on-acc:#03120F;--acc-soft:rgba(25,195,177,.14)}
+[data-theme=light][data-accent=teal]{--acc:#0E8C80;--acc-ink:#0B7A70;--on-acc:#FFFFFF;--acc-soft:rgba(14,140,128,.1)}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:'Onest',system-ui,sans-serif;-webkit-font-smoothing:antialiased;transition:background-color .3s,color .3s}
+*,*::before,*::after{box-sizing:border-box}
+a{color:var(--fg);text-decoration:none}
+a:hover{color:var(--acc-ink)}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+::selection{background:var(--acc);color:var(--on-acc)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+<div style="min-height:100vh;background:var(--bg);color:var(--fg)">
+<dc-import name="SiteHeader" active="services" hint-size="100%,72px" style="position:sticky;top:0;z-index:50"></dc-import>
+
+<section data-screen-label="Services hero" style="position:relative;overflow:hidden;border-bottom:1px solid var(--line)">
+  <div style="position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:88px 88px;-webkit-mask-image:radial-gradient(60% 80% at 85% 20%,#000 10%,transparent 75%);mask-image:radial-gradient(60% 80% at 85% 20%,#000 10%,transparent 75%)"></div>
+  <div style="position:relative;max-width:1320px;margin:0 auto;padding:clamp(56px,8vw,120px) clamp(20px,4vw,48px) clamp(56px,7vw,96px);display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:56px">
+    <div data-reveal="0" style="flex:1 1 560px;max-width:900px;display:flex;flex-direction:column;gap:28px">
+      <div style="display:flex;align-items:center;gap:14px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg3)"><span style="color:var(--acc-ink)">Services</span><span style="width:32px;height:1px;background:var(--line2)"></span><span>06 disciplines</span></div>
+      <h1 style="margin:0;font-size:clamp(44px,7vw,104px);font-weight:600;line-height:.95;letter-spacing:-.055em;text-wrap:balance">Six services. One system behind your business.</h1>
+      <p style="margin:0;max-width:560px;font-size:clamp(17px,1.5vw,20px);line-height:1.55;color:var(--fg2);text-wrap:pretty">Hire us for one piece or for all of it. Either way, what we build connects to the rest of your operations: your ERP, your warehouse, your reports.</p>
+    </div>
+    <nav data-reveal="120" aria-label="Services on this page" style="flex:0 1 340px;display:flex;flex-direction:column;border-top:1px solid var(--line)">
+      <sc-for list="{{ services }}" as="s" hint-placeholder-count="6">
+        <a href="#{{ s.id }}" style="display:flex;align-items:center;gap:16px;padding:13px 0;border-bottom:1px solid var(--line);font-size:15.5px;color:var(--fg2)" style-hover="color:var(--fg)"><span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--acc-ink)">{{ s.num }}</span><span style="flex:1">{{ s.title }}</span><span style="color:var(--fg3)">↓</span></a>
+      </sc-for>
+    </nav>
+  </div>
+</section>
+
+<section data-screen-label="Service list">
+  <sc-for list="{{ services }}" as="s" hint-placeholder-count="6">
+    <article id="{{ s.id }}" style="scroll-margin-top:72px;border-bottom:1px solid var(--line)">
+      <div data-reveal="0" style="max-width:1320px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:36px clamp(32px,4vw,64px)">
+        <div style="display:flex;flex-direction:column;gap:18px">
+          <span style="font-size:clamp(64px,7vw,112px);font-weight:600;line-height:.85;letter-spacing:-.06em;color:var(--acc-ink)">{{ s.num }}</span>
+          <h2 style="margin:0;font-size:clamp(28px,3vw,42px);font-weight:600;line-height:1.05;letter-spacing:-.04em;text-wrap:balance">{{ s.title }}</h2>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:28px">
+          <p style="margin:0;font-size:18px;line-height:1.6;color:var(--fg2);text-wrap:pretty">{{ s.desc }}</p>
+          <div style="display:flex;flex-wrap:wrap;gap:12px 40px">
+            <div style="display:flex;flex-direction:column;gap:6px"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg3)">Typical timeline</span><span style="font-size:17px;font-weight:500">{{ s.time }}</span></div>
+            <div style="display:flex;flex-direction:column;gap:6px"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg3)">Best for</span><span style="font-size:17px;font-weight:500">{{ s.best }}</span></div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:20px">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg3)">What you get</span>
+          <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;border-top:1px solid var(--line)">
+            <sc-for list="{{ s.items }}" as="it" hint-placeholder-count="4">
+              <li style="display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:16px;line-height:1.4"><span style="color:var(--acc-ink)">+</span>{{ it }}</li>
+            </sc-for>
+          </ul>
+          <a href="Service%20Detail.dc.html" style="align-self:flex-start;display:inline-flex;align-items:center;gap:10px;height:46px;padding:0 20px;border-radius:999px;border:1px solid var(--line2);font-size:15px;font-weight:500;color:var(--fg);white-space:nowrap;transition:background .2s,border-color .2s" style-hover="background:var(--acc);border-color:var(--acc);color:var(--on-acc)">Service details <span>→</span></a>
+        </div>
+      </div>
+    </article>
+  </sc-for>
+</section>
+
+<section data-screen-label="How it fits together" style="border-bottom:1px solid var(--line)">
+  <div style="max-width:1320px;margin:0 auto;padding:clamp(80px,11vw,150px) clamp(20px,4vw,48px)">
+    <div data-reveal="0" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px 48px;margin-bottom:clamp(40px,5vw,64px)">
+      <div style="display:flex;flex-direction:column;gap:22px;max-width:820px">
+        <div style="display:flex;align-items:center;gap:14px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg3)"><span style="color:var(--acc-ink)">How it fits</span><span style="width:32px;height:1px;background:var(--line2)"></span><span>4 layers</span></div>
+        <h2 style="margin:0;font-size:clamp(34px,4.8vw,68px);font-weight:600;line-height:1;letter-spacing:-.045em;text-wrap:balance">Most companies run on four layers. We build and connect all of them.</h2>
+      </div>
+      <p style="margin:0;max-width:380px;font-size:17px;line-height:1.55;color:var(--fg2);text-wrap:pretty">When the layers talk to each other, an order placed online reaches the warehouse, the ledger and the dashboard without anyone retyping it.</p>
+    </div>
+    <div style="position:relative;display:flex;flex-direction:column;gap:10px">
+      <div data-reveal="0" style="display:flex;flex-wrap:wrap;align-items:center;gap:12px 28px;padding:24px clamp(20px,2.4vw,32px);border:1px solid var(--line);border-radius:18px;background:var(--bg2)">
+        <span style="flex:0 0 200px;font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--fg3)">L1 · What customers see</span>
+        <span style="flex:1 1 280px;font-size:clamp(20px,2vw,26px);font-weight:600;letter-spacing:-.025em">Website, online store, mobile app</span>
+        <span style="display:flex;gap:6px;flex-wrap:wrap"><a href="#web" style="padding:6px 12px;border-radius:999px;background:var(--acc-soft);color:var(--acc-ink);font-family:'JetBrains Mono',monospace;font-size:12px">01 Web</a><a href="#mobile" style="padding:6px 12px;border-radius:999px;background:var(--acc-soft);color:var(--acc-ink);font-family:'JetBrains Mono',monospace;font-size:12px">02 Mobile</a></span>
+      </div>
+      <div data-reveal="60" style="display:flex;flex-wrap:wrap;align-items:center;gap:12px 28px;padding:24px clamp(20px,2.4vw,32px);border:1px solid var(--line);border-radius:18px;background:var(--bg2)">
+        <span style="flex:0 0 200px;font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--fg3)">L2 · Where your team works</span>
+        <span style="flex:1 1 280px;font-size:clamp(20px,2vw,26px);font-weight:600;letter-spacing:-.025em">Orders, documents, approvals, internal tools</span>
+        <span style="display:flex;gap:6px;flex-wrap:wrap"><a href="#custom" style="padding:6px 12px;border-radius:999px;background:var(--acc-soft);color:var(--acc-ink);font-family:'JetBrains Mono',monospace;font-size:12px">05 Custom software</a></span>
+      </div>
+      <div data-reveal="120" style="display:flex;flex-wrap:wrap;align-items:center;gap:12px 28px;padding:24px clamp(20px,2.4vw,32px);border:1px solid var(--acc);border-radius:18px;background:var(--bg2)">
+        <span style="flex:0 0 200px;font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--fg3)">L3 · Where records live</span>
+        <span style="flex:1 1 280px;font-size:clamp(20px,2vw,26px);font-weight:600;letter-spacing:-.025em">Logo Tiger / Logo Unity ERP</span>
+        <span style="display:flex;gap:6px;flex-wrap:wrap"><a href="#erp" style="padding:6px 12px;border-radius:999px;background:var(--acc);color:var(--on-acc);font-family:'JetBrains Mono',monospace;font-size:12px">03 ERP</a></span>
+      </div>
+      <div data-reveal="180" style="display:flex;flex-wrap:wrap;align-items:center;gap:12px 28px;padding:24px clamp(20px,2.4vw,32px);border:1px solid var(--line);border-radius:18px;background:var(--bg2)">
+        <span style="flex:0 0 200px;font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--fg3)">L4 · How management decides</span>
+        <span style="flex:1 1 280px;font-size:clamp(20px,2vw,26px);font-weight:600;letter-spacing:-.025em">SQL data warehouse and Power BI dashboards</span>
+        <span style="display:flex;gap:6px;flex-wrap:wrap"><a href="#data" style="padding:6px 12px;border-radius:999px;background:var(--acc-soft);color:var(--acc-ink);font-family:'JetBrains Mono',monospace;font-size:12px">04 Data</a></span>
+      </div>
+      <div data-reveal="240" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 28px;padding:18px clamp(20px,2.4vw,32px);border:1px dashed var(--line2);border-radius:18px">
+        <span style="font-size:16px;color:var(--fg2)">Across every layer: interfaces people understand without training.</span>
+        <a href="#design" style="padding:6px 12px;border-radius:999px;background:var(--acc-soft);color:var(--acc-ink);font-family:'JetBrains Mono',monospace;font-size:12px">06 UI/UX</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<dc-import name="CtaBand" title="Not sure which service you need?" text="Describe the problem instead. We'll tell you which pieces would help, and which you can skip." hint-size="100%,420px"></dc-import>
+<dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() { this.t = setTimeout(() => window.ofisReveal && window.ofisReveal(), 60); }
+  componentWillUnmount() { clearTimeout(this.t); }
+  renderVals() {
+    const S = [
+      ['web', 'Web Development', 'Fast, clear websites and online stores, plus the admin panels your staff use to run them. Connected to your ERP, so prices, stock and orders stay in sync.', '3–12 weeks', 'Distributors, retailers, B2B suppliers', ['Corporate websites', 'E-commerce with online payments', 'Admin panels and CMS', 'Catalog and stock synced with ERP']],
+      ['mobile', 'Mobile Apps', 'iOS and Android apps built in Flutter from one codebase. For customers, field sales teams and warehouse staff.', '8–16 weeks', 'Retail chains, field sales, logistics', ['Customer and loyalty apps', 'Sales rep and field apps', 'Offline mode with background sync', 'App Store and Google Play release']],
+      ['erp', 'ERP Consulting & Integration', 'Logo Tiger and Logo Unity implemented and adjusted to your processes, then connected to your website, apps, banks and warehouse.', '4–12 weeks', 'Manufacturers, distributors, trading', ['Setup and configuration', 'Custom fields, forms and reports', 'Integrations via Logo objects and REST', 'Data migration and staff training']],
+      ['data', 'Data & Reporting', 'One source of truth for management. We model your data in SQL and build Power BI dashboards that refresh on their own.', '3–8 weeks', 'Owners, CFOs, operations leads', ['Data warehouse on SQL Server or PostgreSQL', 'Power BI dashboards', 'Automated management reports', 'KPI definitions agreed with finance']],
+      ['custom', 'Custom Business Software', "Tools for the work no standard product covers: order management, export and trade documents, approvals and internal portals.", '6–20 weeks', 'Exporters, manufacturers, holdings', ['Order management systems', 'Export and trade document generators', 'Approval workflows', 'Internal portals and tools']],
+      ['design', 'UI/UX Design', 'Research, user flows and interface design, for new products or for systems your team struggles to use today.', '2–6 weeks', 'New products, legacy system redesigns', ['Interviews and process mapping', 'Wireframes and clickable prototypes', 'UI design and design systems', 'Usability testing']]
+    ];
+    return { services: S.map(([id, title, desc, time, best, items], i) => ({ id, num: '0' + (i + 1), title, desc, time, best, items })) };
+  }
+}
+</script>
+</body>
+</html>
