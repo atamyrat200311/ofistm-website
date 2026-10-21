@@ -3,25 +3,31 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { LANGS, headerText, useLang } from './Lang';
+import { localeInfo, locales, type Locale } from '@/i18n/config';
+import type { Dict } from '@/i18n/dicts/en';
 
-const HREFS = ['/services', '/work', '/#process', '/about', '/contact'];
+const PATHS = ['/services', '/work', '#process', '/about', '/contact'];
 
-function activeIndex(path: string) {
-  if (path.startsWith('/services')) return 0;
-  if (path.startsWith('/work')) return 1;
-  if (path.startsWith('/about')) return 3;
-  if (path.startsWith('/contact')) return 4;
+function activeIndex(rest: string) {
+  if (rest.startsWith('/services')) return 0;
+  if (rest.startsWith('/work')) return 1;
+  if (rest.startsWith('/about')) return 3;
+  if (rest.startsWith('/contact')) return 4;
   return -1;
 }
 
-export default function SiteHeader() {
+const remember = (l: Locale) => {
+  document.cookie = `NEXT_LOCALE=${l};path=/;max-age=31536000;samesite=lax`;
+};
+
+export default function SiteHeader({ lang, t }: { lang: Locale; t: Dict['nav'] }) {
   const path = usePathname();
-  const { lang, setLang } = useLang();
   const [open, setOpen] = useState(false);
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
-  const s = headerText[lang];
-  const active = activeIndex(path);
+  // Path without the locale prefix, so the language switch keeps the current page.
+  const rest = path.replace(/^\/[^/]+/, '');
+  const active = activeIndex(rest);
+  const href = (p: string) => `/${lang}${p}`;
 
   useEffect(() => {
     setTheme(document.documentElement.dataset.theme === 'light' ? 'light' : 'dark');
@@ -42,38 +48,38 @@ export default function SiteHeader() {
   }, []);
 
   const toggleTheme = () => {
-    const t = theme === 'dark' ? 'light' : 'dark';
-    setTheme(t);
-    document.documentElement.dataset.theme = t;
-    try { localStorage.setItem('ofis-theme', t); } catch {}
+    const next = theme === 'dark' ? 'light' : 'dark';
+    setTheme(next);
+    document.documentElement.dataset.theme = next;
+    try { localStorage.setItem('ofis-theme', next); } catch {}
   };
-  const themeLabel = theme === 'dark' ? s.light : s.dark;
+  const themeLabel = theme === 'dark' ? t.light : t.dark;
 
   return (
     <div className={'hdr-wrap' + (open ? ' menu-open' : '')}>
       <header className="hdr">
         <div className="wrap hdr-in">
-          <Link href="/" aria-label="ofis.tm home" className="hdr-logo">
+          <Link href={`/${lang}`} aria-label={t.home} className="hdr-logo">
             <img src="/brand/wordmark-white.png" alt="ofis.tm" width={90} height={32} className="logo" />
           </Link>
           <nav className="hdr-nav" aria-label="Main">
-            {s.nav.map((label, i) => (
-              <Link key={HREFS[i]} href={HREFS[i]} className={i === active ? 'on' : undefined} aria-current={i === active ? 'page' : undefined}>{label}</Link>
+            {t.items.map((label, i) => (
+              <Link key={PATHS[i]} href={href(PATHS[i])} className={i === active ? 'on' : undefined} aria-current={i === active ? 'page' : undefined}>{label}</Link>
             ))}
           </nav>
           <div className="hdr-tools">
-            <div role="group" aria-label={s.language} className="langs">
-              {LANGS.map(([c, code, full]) => (
-                <button key={c} type="button" title={full} aria-pressed={lang === c} onClick={() => setLang(c)}>{code}</button>
+            <div role="group" aria-label={t.language} className="langs">
+              {locales.map(l => (
+                <Link key={l} href={`/${l}${rest}`} hrefLang={l} title={localeInfo[l].name} aria-pressed={lang === l} onClick={() => remember(l)}>{localeInfo[l].code}</Link>
               ))}
             </div>
-            <button type="button" className="theme-btn" onClick={toggleTheme} aria-label="Toggle colour theme" title={themeLabel}>
+            <button type="button" className="theme-btn" onClick={toggleTheme} aria-label={t.theme} title={themeLabel}>
               <span className="theme-ico" />
             </button>
-            <Link href="/contact" className="hdr-cta">{s.cta}<span>→</span></Link>
+            <Link href={`/${lang}/contact`} className="hdr-cta">{t.cta}<span>→</span></Link>
           </div>
           <button type="button" className="menu-btn" onClick={() => setOpen(o => !o)} aria-expanded={open} aria-controls="mobile-menu">
-            <span>{open ? s.close : s.menu}</span>
+            <span>{open ? t.close : t.menu}</span>
             <span className="burger"><span /><span /></span>
           </button>
         </div>
@@ -81,24 +87,24 @@ export default function SiteHeader() {
       {open && (
         <div className="mmenu" id="mobile-menu">
           <nav aria-label="Mobile">
-            {s.nav.map((label, i) => (
-              <Link key={HREFS[i]} href={HREFS[i]} onClick={() => setOpen(false)}>
+            {t.items.map((label, i) => (
+              <Link key={PATHS[i]} href={href(PATHS[i])} onClick={() => setOpen(false)}>
                 <span className="n">0{i + 1}</span>
                 <span className="t">{label}</span>
               </Link>
             ))}
           </nav>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-            <div className="label">{s.language}</div>
+            <div className="label">{t.language}</div>
             <div className="mlangs">
-              {LANGS.map(([c, , full]) => (
-                <button key={c} type="button" className="toggle" aria-pressed={lang === c} onClick={() => setLang(c)}>{full}</button>
+              {locales.map(l => (
+                <Link key={l} href={`/${l}${rest}`} hrefLang={l} className="toggle" aria-pressed={lang === l} onClick={() => remember(l)}>{localeInfo[l].name}</Link>
               ))}
             </div>
           </div>
           <div className="mmenu-foot">
             <button type="button" onClick={toggleTheme}><span className="theme-ico" />{themeLabel}</button>
-            <Link href="/contact" onClick={() => setOpen(false)}>{s.cta} →</Link>
+            <Link href={`/${lang}/contact`} onClick={() => setOpen(false)}>{t.cta} →</Link>
           </div>
         </div>
       )}

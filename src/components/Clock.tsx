@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { site } from '@/lib/site';
 
 // Ashgabat is UTC+5 all year.
 function ashgabat(now: number) {
@@ -24,13 +25,14 @@ export function LocalTime() {
   return <>{String(d.getUTCHours()).padStart(2, '0')}:{String(d.getUTCMinutes()).padStart(2, '0')}</>;
 }
 
-export function OpenNow() {
+export function OpenNow({ open: openText, closed }: { open: string; closed: string }) {
   const now = useNow(60000);
   if (now === null) return <span className="open-now">&nbsp;</span>;
   const d = ashgabat(now);
   const day = d.getUTCDay(), m = d.getUTCHours() * 60 + d.getUTCMinutes();
-  const open = (day >= 1 && day <= 5 && m >= 540 && m < 1080) || (day === 6 && m >= 600 && m < 840);
+  const [from, to] = day === 0 || day === 6 ? site.hours.weekend : site.hours.weekday;
+  const open = m >= from && m < to;
   return (
-    <span className={'open-now' + (open ? ' on' : '')}><i />{open ? 'Open now in Ashgabat' : 'Closed now. Messages are answered next working day.'}</span>
+    <span className={'open-now' + (open ? ' on' : '')}><i />{open ? openText : closed}</span>
   );
 }
